@@ -8,9 +8,68 @@
 <body>
     
     <script>
-        function check(a) {
-            if(1<= a) 
+        // Write a function that takes one parameter
+        function divisor(param) {
+
+            //assign empty array to be returned
+            let allNum = [];
+
+            // initiate loop to check through from no.s 1 to the given parameter
+            for( i= 1; i <= param; i++) {
+
+                //Numbers divisible by 2 are replaced by "yu"
+                //Numbers divisible by 3 are replaced by "gi"
+                //Numbers divisible by 5 are replaced by "oh"
+                //numbers with multiple divisors get replaced with respective replacements separated by hyphens
+
+                if (i%2 === 0 && i%3 === 0 && i%5 === 0) {
+                    let i = "yu-gi-oh";
+                    allNum.push(i);
+                    console.log(i);
+                }
+                else if (i%2 === 0 && i%3 === 0){
+                    let i = "yu-oh";
+                    allNum.push(i);
+                    console.log(i);
+                }
+                else if (i%2 === 0 && i%5 === 0){
+                    let i = "yu-oh";
+                    allNum.push(i);
+                    console.log(i);
+                }
+                else if (i%3 === 0 && i%5 === 0){
+                    let i = "gi-oh";
+                    allNum.push(i);
+                    console.log(i);
+                }                
+                else if (i%2 === 0){
+                   let i = "yu";
+                    allNum.push(i);
+                    console.log(i);
+                }
+                else if (i%3 === 0) {   
+                    let i = "gi";
+                    allNum.push(i);
+                    console.log(i);
+                }
+                else if (i%5 === 0) {
+                    let i = "oh";
+                    allNum.push(i);
+                    console.log(i);
+                }
+                //no.s are unchanged if not divisible by any of above
+                else {
+                    allNum.push(i);
+                    console.log(i);
+                }
+            }
+            //return array allNum
+            return allNum;
         }
+        //call the function and pass 100 as argument.
+        divisor(100);
+        //call the function and pass it a  random number of your choice
+        divisor(30);
     </script>
 </body>
 </html>
